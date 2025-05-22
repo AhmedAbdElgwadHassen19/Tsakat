@@ -65,7 +65,7 @@ function Login() {
                 required
               />
             </div>
-            <Link to={"/signup"} className="text-decoration-none"><p className="text-info text-center">انشاء حساب  جديد</p></Link>
+            <Link to={"/"} className="text-decoration-none"><p className="text-info text-center">انشاء حساب  جديد</p></Link>
             <button type="submit" className="btn btn-primary w-100">دخول</button>
           </form>
           

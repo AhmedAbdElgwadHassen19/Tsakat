@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { db } from "../firebase/firebaseConfig"; // استيراد Firestore
 import { collection, onSnapshot, deleteDoc, doc } from "firebase/firestore";
 import { Link } from "react-router-dom";
-
+import Navbar from "./Navbar";
 const AdminGoalsPage = () => {
   const [goals, setGoals] = useState([]); // لتخزين الأهداف
   const [loading, setLoading] = useState(true); // لتتبع حالة التحميل
@@ -43,6 +43,8 @@ const AdminGoalsPage = () => {
   }, {});
 
   return (
+    <>
+    <Navbar/>
     <div className="container mt-5">
       <div className="d-flex justify-content-evenly">
         <Link to={"/admin"}>
@@ -106,6 +108,7 @@ const AdminGoalsPage = () => {
         ))
       )}
     </div>
+    </>
   );
 };
 

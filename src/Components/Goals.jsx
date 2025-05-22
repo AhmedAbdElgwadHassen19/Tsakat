@@ -3,7 +3,7 @@ import { db, auth } from "../firebase/firebaseConfig";
 import { collection, onSnapshot, query, where, doc, getDoc, updateDoc } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
 import { onAuthStateChanged } from "firebase/auth";
-
+import Navbar from "./Navbar";
 const UserGoalsPage = () => {
   const [goals, setGoals] = useState([]); // لتخزين الأهداف
   const [loading, setLoading] = useState(true); // لتتبع حالة التحميل
@@ -82,6 +82,9 @@ const UserGoalsPage = () => {
   };
 
   return (
+    <>
+    <Navbar/>
+    
     <div className="container mt-5">
       <h2 className="text-center mb-4">الأهداف الخاصة بي</h2>
       {loading ? (
@@ -132,6 +135,7 @@ const UserGoalsPage = () => {
         <p className="text-center">لا توجد أهداف مضافة حتى الآن.</p>
       )}
     </div>
+    </>
   );
 };
 

@@ -4,7 +4,7 @@ import { doc, getDoc } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
 import AdminAddGoal from "./AdminAddGoal";
 import { onAuthStateChanged } from "firebase/auth"; // استيراد onAuthStateChanged
-
+import Navbar from "./Navbar";
 const AdminPage = () => {
   const [isAdmin, setIsAdmin] = useState(false);
   const [loading, setLoading] = useState(true);
@@ -80,6 +80,8 @@ const AdminPage = () => {
   }
 
   return (
+    <>
+    <Navbar/>
     <div className="container-fluid p-5 bg-dark" style={{ height: "100vh" }}>
       <div className="row">
         <div className="col-md-8 col-lg-12 bg-dark">
@@ -93,6 +95,7 @@ const AdminPage = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 
